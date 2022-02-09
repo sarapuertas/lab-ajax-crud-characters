@@ -1,6 +1,12 @@
 const charactersAPI = new APIHandler('https://minions-api.herokuapp.com/characters');
 
+
+
 window.addEventListener('load', () => {
+
+
+  // LIST ALL
+
   document.getElementById('fetch-all').addEventListener('click', function (event) {
     charactersAPI
       .getFullList()
@@ -21,6 +27,8 @@ window.addEventListener('load', () => {
       })
       .catch(err => console.log(err))
   });
+
+  // LIST ONE
 
   document.getElementById('fetch-one').addEventListener('click', function (event) {
 
@@ -50,6 +58,9 @@ window.addEventListener('load', () => {
       .catch(err => console.log(err))
   });
 
+
+  // DELETE
+
   document.getElementById('delete-one').addEventListener('click', function (event) {
 
     const chId = document.querySelector('#delChId').value
@@ -65,6 +76,9 @@ window.addEventListener('load', () => {
       })
       .catch(err => console.log(err))
   });
+
+
+  // EDIT ONE
 
   document.getElementById('edit-character-form').addEventListener('submit', function (event) {
 
@@ -92,6 +106,8 @@ window.addEventListener('load', () => {
         document.querySelector('#send-dataUpdate').classList.add('red')
       })
   });
+
+  // CREATE NEW ONE
 
   document.getElementById('new-character-form').addEventListener('submit', function (event) {
 
